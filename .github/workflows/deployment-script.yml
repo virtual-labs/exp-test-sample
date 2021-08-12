@@ -6,18 +6,15 @@ on:
   push:
 # mentioning which branch should be used to build the experimnet
     branches: 
-      - testing
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    # The following job will pull  phase3 lab management scipt and build the experiment
     - run: |
-        git clone -b pipeline https://github.com/virtual-labs/ph3-lab-mgmt
-        cd ph3-lab-mgmt/ph3-beta-to-ui3.0-conv
-        make host-experiments
-        cd ../../
+        git clone https://virtual-labs.github.io/${{ github.repository }}
+
         git config --local user.email "admin@vlabs.ac.in"
         git config --local user.name "vleadadmin"
         git checkout --orphan gh-pages
