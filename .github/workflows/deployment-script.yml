@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        git clone https://virtual-labs.github.io/${{ github.repository }}
+        git clone https://github.com/virtual-labs/${{ github.repository }}
 
         git config --local user.email "admin@vlabs.ac.in"
         git config --local user.name "vleadadmin"
