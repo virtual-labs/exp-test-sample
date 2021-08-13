@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        git clone https://github.com/${{ github.repository }}
+        git clone -b test2 https://github.com/${{ github.repository }}
         cd ${{ github.repository }}
         git config --local user.email "admin@vlabs.ac.in"
         git config --local user.name "vleadadmin"
